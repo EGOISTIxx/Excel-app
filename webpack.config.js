@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
-const filename = ext => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`)
+const filename = (ext) => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`)
 
 const jsLoaders = () => {
   const loader = [
@@ -22,12 +22,14 @@ const jsLoaders = () => {
   if (isDev) {
     loader.push('eslint-loader')
   }
+
+  return loader
 }
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-  entry: ['webpack-dev-server/client?http://localhost:3000/', '@babel/polyfill', './app.js'],
+  entry: ['webpack-dev-server/client?http://localhost:3000/', './app.js'],
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
@@ -70,7 +72,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -84,7 +86,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
       },
