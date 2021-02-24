@@ -55,6 +55,7 @@
     white-space: nowrap;
     color: #111;
     outline: none;
+    display: flex;
 
     &.selected {
         border: none;
