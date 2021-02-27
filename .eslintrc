@@ -17,6 +17,8 @@
     "no-trailing-spaces": "off",
     "operator-linebreak": "off",
     "no-unused-vars": "off",
+    "max-len":"off",
+    "one-var":"off" 
   },
   "extends": ["eslint:recommended", "google"]
 }
