@@ -1,3 +1,5 @@
+import { startsWith } from 'core-js/fn/string'
+
 export function capitalaze(string) {
   if (typeof string !== 'string') {
     return ''
