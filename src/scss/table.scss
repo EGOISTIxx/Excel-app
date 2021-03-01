@@ -17,6 +17,7 @@
   }
 
   .row-info {
+    user-select: none;
     position: relative;
     display: flex;
     justify-content: center;
@@ -33,6 +34,7 @@
   }
 
   .column {
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
