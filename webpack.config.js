@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PATHS = require('babel-polyfill')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
@@ -10,7 +11,7 @@ const isDev = !isProd
 const filename = (ext) => (isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`)
 
 const jsLoaders = () => {
-  const loader = [
+  const loaders = [
     {
       loader: 'babel-loader',
       options: {
@@ -21,16 +22,27 @@ const jsLoaders = () => {
   ]
 
   if (isDev) {
-    loader.push('eslint-loader')
+    loaders.push('eslint-loader')
   }
 
-  return loader
+  return loaders
 }
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
+<<<<<<< HEAD
   entry: ['webpack-dev-server/client?http://localhost:3000/', './index.js'],
+=======
+  externals: {
+    paths: PATHS,
+  },
+  entry: [
+    'babel-polyfill',
+    'webpack-dev-server/client?http://localhost:3000/', 
+    './index.js',
+  ],
+>>>>>>> b94b78fd90cd3ecec556d30834cd82ac4ea80b0e
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
@@ -78,8 +90,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              // hmr: isDev,
-              // reloadAll: true,
+              
             },
           },
           'css-loader',

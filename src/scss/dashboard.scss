@@ -1,7 +1,8 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 .db {
+
   &__header {
     position: fixed;
     left: 0;
@@ -39,7 +40,7 @@
     &:hover {
       cursor: pointer;
       color: green;
-      border: 1px solid green;
+      border-color: green;
     }
   }
 
@@ -52,40 +53,42 @@
     padding: 1rem;
   }
 
-  &__list-header{
-      display: flex;
-      justify-content: space-between;
-      color: #202124;
-      font-weight: 500;
-      font-size: 16px;
-      margin-bottom: 10px;
-      padding: 12px;
-  }
-  &__list{
-      @include clear-list;
+  &__list-header {
+    display: flex;
+    justify-content: space-between;
+    color: #202124;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 0 12px;
   }
 
-  &__record{
+  &__list {
+    @include clear-list;
+  }
+
+  &__record {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 14px 12px 16px;
     margin-bottom: 10px;
 
-    &:hover{
-        background: #e6f4ea;
-        border-radius: 25px;
+    &:hover {
+      background: #e6f4ea;
+      border-radius: 25px;
     }
 
     a {
-        text-decoration: none;
-        cursor: pointer;
-        color: #202124;
-        font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      color: #202124;
+      font-size: 14px;
 
-        &:hover{
-            text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
+
 }
