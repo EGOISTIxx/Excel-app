@@ -31,9 +31,6 @@ const jsLoaders = () => {
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
-<<<<<<< HEAD
-  entry: ['webpack-dev-server/client?http://localhost:3000/', './index.js'],
-=======
   externals: {
     paths: PATHS,
   },
@@ -42,7 +39,6 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:3000/', 
     './index.js',
   ],
->>>>>>> b94b78fd90cd3ecec556d30834cd82ac4ea80b0e
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
