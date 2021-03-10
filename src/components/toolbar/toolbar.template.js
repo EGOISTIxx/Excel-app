@@ -9,7 +9,7 @@ function toButton(button) {
       ${meta}
     >
       <i 
-        class="material-icons" 
+        class="material-icons"
         ${meta}
       >${button.icon}</i>
     </div>

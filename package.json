@@ -5,7 +5,8 @@
 
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --mode development --hot --open",
-    "build": "cross-env NODE_ENV=production webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "lint": "npm eslint ./src"
   },
   "repository": {
     "type": "git",
