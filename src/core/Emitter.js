@@ -10,7 +10,7 @@ export class Emitter {
     if (!Array.isArray(this.listeners[event])) {
       return false
     }
-    this.listeners[event].forEach((listener) => {
+    this.listeners[event].forEach(listener => {
       listener(...args)
     })
     return true
@@ -24,7 +24,8 @@ export class Emitter {
     this.listeners[event] = this.listeners[event] || []
     this.listeners[event].push(fn)
     return () => {
-      this.listeners[event] = this.listeners[event].filter((listener) => listener !== fn)
+      this.listeners[event] =
+        this.listeners[event].filter(listener => listener !== fn)
     }
   }
 }
@@ -32,17 +33,6 @@ export class Emitter {
 // Example
 // const emitter = new Emitter()
 //
-// const unsub = emitter.subscribe('vladilen', data => console.log(data))
+// const unsub = emitter.subscribe('123', data => console.log(data))
 // emitter.emit('1231231', 42)
-//
-// setTimeout(() => {
-//   emitter.emit('vladilen', 'After 2 seconds')
-// }, 2000)
-//
-// setTimeout(() => {
-//   unsub()
-// }, 3000)
-//
-// setTimeout(() => {
-//   emitter.emit('vladilen', 'After 4 seconds')
-// }, 4000)
+

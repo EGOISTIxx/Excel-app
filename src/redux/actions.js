@@ -1,4 +1,11 @@
-import { CHANGE_TEXT, CHANGE_STYLES, TABLE_RESIZE, APPLY_STYLE, CHANGE_HEADER } from './types'
+import {
+  CHANGE_TEXT,
+  CHANGE_STYLES,
+  TABLE_RESIZE,
+  APPLY_STYLE,
+  CHANGE_TITLE,
+  UPDATE_DATE,
+} from './types'
 
 // Action Creator
 export function tableResize(data) {
@@ -12,6 +19,12 @@ export function changeText(data) {
   return {
     type: CHANGE_TEXT,
     data,
+  }
+}
+
+export function updateDate() {
+  return {
+    type: UPDATE_DATE,
   }
 }
 
@@ -30,9 +43,9 @@ export function applyStyle(data) {
   }
 }
 
-export function changeHeader(data) {
+export function changeTitle(data) {
   return {
-    type: CHANGE_HEADER,
+    type: CHANGE_TITLE,
     data,
   }
 }
