@@ -4,7 +4,8 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "rules": {
     "semi": "off",
@@ -21,6 +22,6 @@
     "one-var": "off",
     "padded-blocks": "off"
   },
+  "plugins": ["jest"],
   "extends": ["eslint:recommended", "google"]
 }
-//
